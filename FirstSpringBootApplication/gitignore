@@ -1,0 +1,16 @@
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Maven
+target/
+pom.xml.tag
+
+# Application properties
+application*.properties
+application*.yml
+
+# Logs
+*.log

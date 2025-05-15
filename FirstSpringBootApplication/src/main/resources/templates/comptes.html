@@ -1,0 +1,34 @@
+<!-- src/main/resources/templates/comptes.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Comptes List</title>
+</head>
+<body>
+    <h1>Comptes List</h1>
+    <a th:href="@{/comptes/new}">Add New Compte</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>RIB</th>
+                <th>Solde</th>
+                <th>Client</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="compte : ${comptes}">
+                <td th:text="${compte.rib}"></td>
+                <td th:text="${compte.solde}"></td>
+                <td th:text="${compte.client.nom + ' ' + compte.client.prenom}"></td>
+                <td>
+                    <a th:href="@{/comptes/edit/{rib}(rib=${compte.rib})}">Edit</a>
+                    <a th:href="@{/comptes/delete/{rib}(rib=${compte.rib})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/clients}">View Clients</a>
+</body>
+</html>
