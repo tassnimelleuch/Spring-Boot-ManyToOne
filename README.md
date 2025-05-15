@@ -15,33 +15,6 @@ A Spring Boot (STS) application that performs **CRUD operations** on two entitie
 
 ---
 
-## 📂 Project Structure
-
-src/
-├── main/
-│ ├── java/tn.enis/
-│ │ ├── controller/
-│ │ ├── dao/
-│ │ ├── entity/
-│ │ ├── exception/
-│ │ └── service/
-│ └── resources/
-│ ├── static/
-│ └── templates/
-│ ├── clients/
-│ ├── comptes/
-│ ├── compes.html
-│ ├── edit-compte.html
-│ ├── edit-student.html
-│ ├── error.html
-│ ├── hello.html
-│ ├── list.html
-│ └── students.html
-├── test/
-└── pom.xml
-
-
----
 
 ## 🧠 Features
 
@@ -54,18 +27,11 @@ src/
 
 ---
 
-## 🐳 Docker MySQL Setup
-
-```bash
-docker run --name spring-mysql \
-  -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=springdb \
-  -p 3306:3306 \
-  -d mysql:latest
 
 
 
-## 🔍 Inspect Data
+
+## 🔍 Docker Inspect Data
 
 docker exec -it spring-mysql mysql -uroot -proot springdb
 
@@ -77,12 +43,9 @@ SELECT * FROM client;
 SELECT * FROM compte;
 
 
-
-⚙️ Configuration
+## ⚙️ Configuration
 application.properties
 properties
-Copier
-Modifier
 spring.datasource.url=jdbc:mysql://localhost:3306/springdb
 spring.datasource.username=root
 spring.datasource.password=root
@@ -91,10 +54,7 @@ spring.jpa.show-sql=true
 spring.thymeleaf.cache=false
 
 
-🧾 pom.xml Dependencies
-xml
-Copier
-Modifier
+## 🧾 pom.xml Dependencies
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -125,15 +85,11 @@ Modifier
 
 
 
-🗑 SweetAlert for Delete Confirmation
+## 🗑 SweetAlert for Delete Confirmation
 
 
-🚀 Run the App
-Using Maven:
-bash
-Copier
-Modifier
-./mvnw spring-boot:run
+## 🚀 Run the App
+Using Maven: ./mvnw spring-boot:run
 Or from STS or IntelliJ, run the FirstSpringBootApplication class.
 
 
